@@ -10,3 +10,5 @@ https://www.youtube.com/watch?v=Bk28snjHr7c
 3.1.3. Workflow permissions > chose "Read and write permissions"
 3.1.4. Save
 3.2. Actions (top)
+3.2.1. select the failed workfloy run
+3.2.2. 
