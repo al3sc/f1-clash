@@ -1,4 +1,5 @@
 const IMAGES_components = {
+  freni_0 : new URL('./game/components/0_Freni/0_Starter_freni.png', import.meta.url).href,
   freni_1 : new URL('./game/components/0_Freni/1_The_Stabiliser.png', import.meta.url).href,
   freni_2 : new URL('./game/components/0_Freni/2_The_Corsair.png', import.meta.url).href,
   freni_3 : new URL('./game/components/0_Freni/3_The_Fury.png', import.meta.url).href,
@@ -7,6 +8,7 @@ const IMAGES_components = {
   freni_6 : new URL('./game/components/0_Freni/6_Stormbringer.png', import.meta.url).href,
   freni_7 : new URL('./game/components/0_Freni/7_The_Behemoth.png', import.meta.url).href,
   
+  cambio_0 : new URL('./game/components/1_Cambio/0_Starter_cambio.png', import.meta.url).href,
   cambio_1 : new URL('./game/components/1_Cambio/1_The_Equinox.png', import.meta.url).href,
   cambio_2 : new URL('./game/components/1_Cambio/2_Cold_Fusion.png', import.meta.url).href,
   cambio_3 : new URL('./game/components/1_Cambio/3_Pivot.png', import.meta.url).href,
@@ -15,6 +17,7 @@ const IMAGES_components = {
   cambio_6 : new URL('./game/components/1_Cambio/6_The_Gyro.png', import.meta.url).href,
   cambio_7 : new URL('./game/components/1_Cambio/7_Beat.png', import.meta.url).href,
 
+  alettonePosteriore_0 : new URL('./game/components/2_AlettonePosteriore/0_Starter_alettonePosteriore.png', import.meta.url).href,
   alettonePosteriore_1 : new URL('./game/components/2_AlettonePosteriore/1_The_Blaze.png', import.meta.url).href,
   alettonePosteriore_2 : new URL('./game/components/2_AlettonePosteriore/2_The_Spire.png', import.meta.url).href,
   alettonePosteriore_3 : new URL('./game/components/2_AlettonePosteriore/3_Motion.png', import.meta.url).href,
@@ -23,6 +26,7 @@ const IMAGES_components = {
   alettonePosteriore_6 : new URL('./game/components/2_AlettonePosteriore/6_Power_Lift.png', import.meta.url).href,
   alettonePosteriore_7 : new URL('./game/components/2_AlettonePosteriore/7_The_Cyclone.png', import.meta.url).href,
   
+  alettoneAnteriore_0 : new URL('./game/components/3_AlettoneAnteriore/0_Starter_alettoneAnteriore.png', import.meta.url).href,
   alettoneAnteriore_1 : new URL('./game/components/3_AlettoneAnteriore/1_Glide.png', import.meta.url).href,
   alettoneAnteriore_2 : new URL('./game/components/3_AlettoneAnteriore/2_Gallop.png', import.meta.url).href,
   alettoneAnteriore_3 : new URL('./game/components/3_AlettoneAnteriore/3_Spark-E.png', import.meta.url).href,
@@ -31,6 +35,7 @@ const IMAGES_components = {
   alettoneAnteriore_6 : new URL('./game/components/3_AlettoneAnteriore/6_The_Beast.png', import.meta.url).href,
   alettoneAnteriore_7 : new URL('./game/components/3_AlettoneAnteriore/7_Nemesis.png', import.meta.url).href,
   
+  sospensioni_0 : new URL('./game/components/4_Sospensioni/0_Starter_sospensioni.png', import.meta.url).href,
   sospensioni_1 : new URL('./game/components/4_Sospensioni/1_Zenith.png', import.meta.url).href,
   sospensioni_2 : new URL('./game/components/4_Sospensioni/2_Nexus.png', import.meta.url).href,
   sospensioni_3 : new URL('./game/components/4_Sospensioni/3_Curver_2_0.png', import.meta.url).href,
@@ -39,6 +44,7 @@ const IMAGES_components = {
   sospensioni_6 : new URL('./game/components/4_Sospensioni/6_The_Arc.png', import.meta.url).href,
   sospensioni_7 : new URL('./game/components/4_Sospensioni/7_The_Reactor.png', import.meta.url).href,
   
+  motore_0 : new URL('./game/components/5_Motore/0_Starter_motore.png', import.meta.url).href,
   motore_1 : new URL('./game/components/5_Motore/1_The_Synergy.png', import.meta.url).href,
   motore_2 : new URL('./game/components/5_Motore/2_The_Accord.png', import.meta.url).href,
   motore_3 : new URL('./game/components/5_Motore/3_Thunderbolt.png', import.meta.url).href,
@@ -49,4 +55,44 @@ const IMAGES_components = {
   
 }
 
-export default IMAGES_components
+const IMAGES_icons = {
+  speed: new URL('./stats/Velocità.png', import.meta.url).href,
+  cornering: new URL('./stats/Sterzata.png', import.meta.url).href,
+  power_unit: new URL('./stats/PowerUnit.png', import.meta.url).href,
+  qualifying: new URL('./stats/Qualifica.png', import.meta.url).href,
+  pit_time: new URL('./stats/PitTime.png', import.meta.url).href,
+
+  defending: new URL('./stats/Difesa.png', import.meta.url).href,
+  tyre_management: new URL('./stats/GestionePneumatici.png', import.meta.url).href,
+  race_start: new URL('./stats/Partenza.png', import.meta.url).href,
+  overtaking: new URL('./stats/Sorpasso.png', import.meta.url).href,
+}
+
+const IMAGES_circuits = {
+  mogyorod:       new URL('./circuits/0_Mogyorod.png', import.meta.url).href,
+  monaco:         new URL('./circuits/1_Monaco.png', import.meta.url).href,
+  montreal:       new URL('./circuits/2_Montreal.png', import.meta.url).href,
+  zandvoort:      new URL('./circuits/3_Zandvoort.png', import.meta.url).href,
+  singapore:      new URL('./circuits/4_Singapore.png', import.meta.url).href,
+  suzuka:         new URL('./circuits/5_Suzuka.png', import.meta.url).href,
+  barcelona:      new URL('./circuits/6_Barcelona.png', import.meta.url).href,
+  mexico_city:    new URL('./circuits/7_MexicoCity.png', import.meta.url).href,
+  imola:          new URL('./circuits/8_Imola.png', import.meta.url).href,
+  melbourne:      new URL('./circuits/9_Melbourne.png', import.meta.url).href,
+  sakhir_desert:  new URL('./circuits/10_SakhirDesert.png', import.meta.url).href,
+  sao_paulo:      new URL('./circuits/11_SaoPaulo.png', import.meta.url).href,
+  austin:         new URL('./circuits/12_Austin.png', import.meta.url).href,
+  miami:          new URL('./circuits/13_Miami.png', import.meta.url).href,
+  silverstone:    new URL('./circuits/14_Silverstone.png', import.meta.url).href,
+  monza:          new URL('./circuits/15_Monza.png', import.meta.url).href,
+  spielberg:      new URL('./circuits/16_Spielberg.png', import.meta.url).href,
+  baku:           new URL('./circuits/17_Baku.png', import.meta.url).href,
+  shanghai:       new URL('./circuits/18_Shanghai.png', import.meta.url).href,
+  las_vegas:      new URL('./circuits/19_LasVegas.png', import.meta.url).href,
+  spa:            new URL('./circuits/20_Spa.png', import.meta.url).href,
+  jeddah:         new URL('./circuits/21_Jeddah.png', import.meta.url).href,
+  abu_dhabi:      new URL('./circuits/22_AbuDhabi.png', import.meta.url).href,
+  
+}
+
+export { IMAGES_components, IMAGES_icons, IMAGES_circuits }

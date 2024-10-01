@@ -1,14 +1,14 @@
-import { CIRCUITS, COMPONENTS } from '../mocks/mocks.js'
 import { React, useState } from 'react';
 import { Container, Row, Col, Button, Dropdown, Modal, Form, CloseButton, Image } from 'react-bootstrap';
-import { CarComponent } from './HomeComponents.jsx';
+import { CarComponent, DriverComponent } from './HomeComponents.jsx';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import IMAGES_components from '../images/images.jsx';
+import { IMAGES_circuits, IMAGES_icons } from '../images/images.jsx';
+
 import '../App.css';
 
 function Home(props) {
-  const { levels, setLevels, level, setLevel, circuit, setCircuit } = props;
+  const { levels, setLevels, level, setLevel, circuit, setCircuit, COMPONENTS, CIRCUITS } = props;
 
   const [showModal, setShowModal] = useState(false)
   const [newCircuitId, setNewCircuitId] = useState(-1)
@@ -62,10 +62,10 @@ function Home(props) {
   return (
     <>
       <h1>F1 Clash Strategy</h1>
-      <Container fluid>
-        <Row>
+      <div>
+        <Row className="level-circuit-row">
           <Col>
-            <Dropdown variant="successi" id="dropdown-basic-button">
+            <Dropdown variant="success" id="dropdown-basic-button">
               <Dropdown.Toggle id="dropdown-basic">
                 {level.name}
               </Dropdown.Toggle>
@@ -81,17 +81,17 @@ function Home(props) {
           <Col>
             <Dropdown variant="success" id="dropdown-basic-button">
               <Dropdown.Toggle id="dropdown-basic">
-                {level.circuits.length!==0 ? circuit.name : "Circuits..."}
+                {level.circuits.length!==0 ? circuit.Name : "Circuits..."}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 {level.circuits.map( (x, index) => (
                   <Row key={index} className="d-flex justify-content-between">
-                    <Col xs={8}>
+                    <Col lg={8}>
                       <Dropdown.Item key={index} onClick={() => setCircuit(x)} >
-                        {x.name}
+                        {x.Name}
                       </Dropdown.Item>
                     </Col >
-                    <Col xs={3} className="ml-auto">
+                    <Col lg={3} className="ml-auto">
                       <CloseButton onClick={() => handleDeleteCircuit(x)} />
                     </Col>
                   </Row>
@@ -103,53 +103,72 @@ function Home(props) {
                 </Dropdown.Menu>
             </Dropdown>
           </Col>
-          <Col>{circuit && circuit.stats.driver}</Col>
-          <Col>{circuit && circuit.stats.car}</Col>
+          <Col>{circuit 
+            && <Image className="circuit-image" src={IMAGES_circuits[circuit.Name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '_')]}/>
+          }</Col>
+          <Col>{circuit
+           && <>
+           <Image className="stat-image" src={IMAGES_icons[circuit.Driver_stat.replace(/\s+/g, '_').toLowerCase()]} /> &nbsp;
+           {circuit.Driver_stat}
+           </>}</Col>
+          <Col>{circuit 
+          && <>
+            <Image className="stat-image" src={IMAGES_icons[circuit.Car_stat.replace(/\s+/g, '_').toLowerCase()]} /> &nbsp;
+            {circuit.Car_stat}
+          </>}</Col>
         </Row>
       
-        { circuit && <>
-        <Row>
-          <Col className="main-tab left-tab">
-            <h2>Drivers</h2>
-            <Row>
-              <Col xs={6}></Col>
-              <Col xs={6}></Col>
-            </Row>
-          </Col>
-          <Col className="main-tab right-tab">
-            <h2>Components</h2>
-            <Row className="car-setup-tab">
-              <Col xs={4}>
-                <CarComponent component="freni" title="Freni" circuit={circuit} />
-              </Col>
-              <Col xs={4}>
-                <CarComponent component="cambio" title="Cambio" circuit={circuit} />
-              </Col>
-              <Col xs={4}>
-                <CarComponent component="alettonePosteriore" title="Alettone Posteriore" circuit={circuit} />
-              </Col>
-            </Row>
-            <Row className="car-setup-tab">
-              <Col xs={4}>
-                <CarComponent component="alettoneAnteriore" title="Alettone Anteriore" circuit={circuit}/>
-              </Col>
-              <Col xs={4}>
-                <CarComponent component="sospensioni" title="Cambio" circuit={circuit} />
-              </Col>
-              <Col xs={4}>
-                <CarComponent component="motore" title="Motore" circuit={circuit} />
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-        <Row>
-          <Col className="main-tab">
-          
-          </Col>
-        </Row>
-        </>}
+        { circuit && 
+        <div className="main-table">
+          <Row className="main-row-table">
+            <Col className="main-tab-table" lg={6} xs={12}>
+              <div className="setup-tab-title">
+                <h2>Drivers</h2>
+              </div>
+              <Row>
+                <Col lg={6}>
+                  <DriverComponent title={"1st driver"} />
+                </Col>
+                <Col lg={6}>
+                  <DriverComponent title={"2nd driver"} />
+                </Col>
+              </Row>
+            </Col>
+            <Col className="main-tab-table" lg={6} xs={12}>
+              <div className="setup-tab-title">
+                <h2>Components</h2>
+              </div>
+              <Row className="car-setup-row">
+                <Col lg={4} xs={12} md={6}>
+                  <CarComponent component="freni" title="Freni" circuit={circuit} />
+                </Col>
+                <Col lg={4} xs={12} md={6}>
+                  <CarComponent component="cambio" title="Cambio" circuit={circuit} />
+                </Col>
+                <Col lg={4} xs={12} md={6}>
+                  <CarComponent component="alettonePosteriore" title="Alettone Posteriore" circuit={circuit} />
+                </Col>
+                <Col lg={4} xs={12} md={6}>
+                  <CarComponent component="alettoneAnteriore" title="Alettone Anteriore" circuit={circuit}/>
+                </Col>
+                <Col lg={4} xs={12} md={6}>
+                  <CarComponent component="sospensioni" title="Sospensioni" circuit={circuit} />
+                </Col>
+                <Col lg={4} xs={12} md={6}>
+                  <CarComponent component="motore" title="Motore" circuit={circuit} />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="main-tab-table">
+            
+            </Col>
+          </Row>
+        </div>
+        }
 
-      </Container>
+      </div>
       
       
       
@@ -162,14 +181,14 @@ function Home(props) {
           Select the new circuit for difficulty: {level.name}.
           <Dropdown>
             <Dropdown.Toggle id="dropdown-basic">
-              { newCircuitId===-1 ? "Select the circuit . . ." : CIRCUITS.find(x => x.id === newCircuitId).name}
+              { newCircuitId===-1 ? "Select the circuit . . ." : CIRCUITS.find(x => x.id === newCircuitId).Name}
             </Dropdown.Toggle>
             <Dropdown.Menu>
               { CIRCUITS
                 .filter( x => !level.circuits.some( y => x.id === y.id))
                 .map( (x, index) => (
                 <Dropdown.Item key={index} onClick={() => setNewCircuitId(x.id)}>
-                  {x.name}
+                  {x.Name}
                 </Dropdown.Item>
               ))}
             </Dropdown.Menu>
@@ -192,7 +211,7 @@ function Home(props) {
 }
 
 function CarPartPage(props) {
-  const { changeComponent } = props;
+  const { changeComponent, COMPONENTS } = props;
   
   const {part} = useParams()
   const navigate = useNavigate();
@@ -203,10 +222,15 @@ function CarPartPage(props) {
   }
 
   return (<>
-    <button onClick={() => navigate(-1)}>Back {part}</button>
+    <h1>{part}</h1>
+    <button onClick={() => navigate(-1)}>Back</button>
     <br/>
-    {COMPONENTS[part]
-      .map( x => <Button onClick={() => handleChange(x.id, x.name)}>{x.id} {x.name}</Button> )
+    {COMPONENTS
+      .filter( x => {
+        const [prefix, number] = x.id.split("_")
+        return prefix === part && x.Level === "1" && number !== "0"
+      } )
+      .map( x => <Button onClick={() => handleChange(x.id, x.name)}>{x.id} {x.Name}</Button> )
     }
     
   </>)

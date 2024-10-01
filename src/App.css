@@ -1,27 +1,88 @@
-.container {
+.main-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
+  padding: 20px;
 }
 
-.setup-table {
-  flex-grow: 1;
+.single-row-text {
+  white-space: nowrap;
 }
 
-.main-tab {
-  border: 1px solid;
-  border-color: grey;
+.small-text {
+  font-size: 12px;
+}
+
+/*---------------------HOME-PAGE----------------------------*/
+
+.dropdown-menu {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.modal {
+  color: #000;
+}
+
+.circuit-image {
+  max-width: 150px;
+  max-height: 100px;
+}
+
+.stat-image {
+  max-width: 20px;
+  max-height: 20px;
+}
+
+/*---------------------MAIN-TABLE----------------------------*/
+
+.main-table {
+  margin: 10px;
+  /*border: 1px solid;
+  border-color: grey;*/
+  padding-right: 20px;
+  padding-left: 20px;
+  
+}
+
+.level-circuit-row {
+
+}
+
+.main-row-table {
+  /*padding: 10px;*/
+}
+
+.main-tab-table {
+  /*border: 1px solid;
+  border-color: red;*/
+  margin: 10px 0px 10px 0px;
+}
+
+/*---------------------COMPONENTS----------------------------*/
+
+.setup-tab-title {
+  margin-bottom: 10px;
 }
 
 .car-setup-tab {
-  padding: 10px;
-  border-top: 1px;
+  /*border: 1px solid;
+  border-color: yellow;*/
 }
+
+.car-setup-row {
+  /*padding: 10px;
+  border-top: 1px;*/
+}
+
 
 .component-tab {
   border: 1px ridge;
   border-radius: 10px;
   padding: 5px;
+  max-height: 260px; /* Imposta la massima altezza desiderata */
+  max-width: 236px;
+  /*overflow: hidden; */
 }
 
 .component-tab:hover {
@@ -29,10 +90,17 @@
   cursor: pointer;
 }
 
-.modal {
-  color: #000;
-}
 
 .component-image {
   border-radius: 10px;
 }
+
+
+.component-stat-info {
+  /*display: flex;
+  white-space: nowrap;
+  min-width: 0;
+  font-size: clamp(6px, 0.9vw, 24px);
+  flex-grow: 1;*/
+}
+

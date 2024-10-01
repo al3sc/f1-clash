@@ -1,0 +1,24 @@
+id,Name,Place,Driver_stat,Car_stat
+0,Mogyoród,Hungary,Defending,Cornering
+1,Monaco,Monaco,Defending,Cornering
+2,Montréal,Canada,Overtaking,Cornering
+3,Zandvoort,Netherlands,Overtaking,Cornering
+4,Singapore,Singapore,Race Start,Cornering
+5,Suzuka,Japan,Race Start,Cornering
+6,Barcelona,Spain,Tyre Management,Cornering
+7,Mexico City,Mexico,Tyre Management,Cornering
+8,Imola,Italy,Defending,Power Unit
+9,Melbourne,Australia,Defending,Power Unit
+10,Sakhir Desert,Bahrain,Overtaking,Power Unit
+11,Sao Paulo,Brazil,Overtaking,Power Unit
+12,Austin,USA,Race Start,Power Unit
+13,Miami,USA,Race Start,Power Unit
+14,Silverstone,United Kingdom,Tyre Management,Power Unit
+15,Monza,Italy,Defending,Speed
+16,Spielberg,Austria,Defending,Speed
+17,Baku,Azerbaijan,Overtaking,Speed
+18,Shanghai,China,Overtaking,Speed
+19,Las Vegas,USA,Race Start,Speed
+20,Spa,Belgium,Race Start,Speed
+21,Jeddah,Saudi Arabia,Tyre Management,Speed
+22,Abu Dhabi,UAE,Tyre Management,Speed

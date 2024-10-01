@@ -1,10 +1,35 @@
+/* fonts */
+@font-face {
+  font-family: "F1Regular";
+  src: local("F1Regular"),
+    url("./fonts/Formula1-Regular.otf") format("opentype");
+  font-weight: normal;
+}
+
 /* Stile per l'intero documento */
 body {
-  padding: 1%;
   color: #fff;
+  font-family: "F1Regular";
   background-image: url("./images/f1_wallpaper_1.jpg");
   background-size: cover; /* Copre l'intera area visibile */
-  background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+  /*background-repeat: no-repeat;*/
+  position: relative;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, rgb(33, 0, 24)),
+              url('./images/f1_wallpaper_1.jpg') no-repeat center top;
+}
+
+body::after {
+  content: "";
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgb(33, 0, 24)),
+              url('./images/f1_wallpaper_1.jpg') no-repeat center top;
+  background-size: cover;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Altezza massima visibile */
+  transform: scaleY(-1); /* Specchiatura verticale */
+  z-index: -1;
 }
 
 /* Stile per il titolo della pagina */

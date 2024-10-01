@@ -1,3 +1,36 @@
+import { loadCsvData } from "./csvLoader";
+
+async function getAllCircuits() {
+  try {
+    const data = await loadCsvData("circuits.csv")
+    console.log(data)
+    return data;
+  } catch (error) {
+    console.error("Error loading CSV circuits: ", error)
+  }
+}
+
+async function getAllDrivers() {
+  try {
+    const data = await loadCsvData("drivers.csv")
+    console.log(data)
+    return data;
+  } catch (error) {
+    console.error("Error loading CSV drivers: ", error)
+  }
+}
+
+async function getAllComponents() {
+  try {
+    const data = await loadCsvData("components.csv")
+    console.log(data)
+    return data;
+  } catch (error) {
+    console.error("Error loading CSV components: ", error)
+  }
+}
+
+
 const CIRCUITS = [
   {
     id: 0,
